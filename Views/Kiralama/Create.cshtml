@@ -1,0 +1,13 @@
+﻿@model AliMertTosunAracSinavi.Models.Kiralama
+
+<h2>Araç Kiralama Talebi</h2>
+
+<form asp-controller="Kiralama" asp-action="Create" method="post" enctype="multipart/form-data">
+    <input asp-for="AracAdi" placeholder="Araç Adı" required />
+    <input asp-for="BaslangicTarihi" type="date" required />
+    <input asp-for="BitisTarihi" type="date" required />
+    <input type="file" name="Foto" required />
+    <button type="submit">Talebi Ekle</button>
+</form>
+
+<p>@TempData["Success"]</p>

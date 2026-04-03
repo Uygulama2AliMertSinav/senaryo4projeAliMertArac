@@ -1,0 +1,31 @@
+﻿@model List<AliMertTosunAracSinavi.Models.User>
+
+<h2>Kullanıcı Listesi</h2>
+<a class="btn btn-primary mb-2" href="/User/Create">Yeni Kullanıcı Ekle</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad Soyad</th>
+            <th>Email</th>
+            <th>Admin</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.FullName</td>
+                <td>@item.Email</td>
+                <td>@item.IsAdmin</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" href="/User/Edit/@item.Id">Düzenle</a>
+                    <a class="btn btn-sm btn-danger" href="/User/Delete/@item.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

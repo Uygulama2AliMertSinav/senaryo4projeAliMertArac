@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AliMertTosunAracSinavi.Models.Kiralama>
+
+<h2>Kiralama Listesi</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kullanıcı Adı</th>
+            <th>Arac Adı</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th>Fotoğraf</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.User?.FullName</td>
+                <td>@item.AracAdi</td>
+                <td>@item.BaslangicTarihi.ToShortDateString()</td>
+                <td>@item.BitisTarihi.ToShortDateString()</td>
+                <td>
+                    <img src="@Url.Content("~/images/" + item.FotoPath)" width="100" />
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Kiralama" asp-route-id="@item.Id">Düzenle</a> |
+                    <a asp-action="Delete" asp-controller="Kiralama" asp-route-id="@item.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

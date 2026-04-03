@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Araç Kiralama</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a asp-controller="Auth" asp-action="Register">Üye Ol</a></li>
+                <li><a asp-controller="Auth" asp-action="Login">Giriş Yap</a></li>
+                <li><a asp-controller="Auth" asp-action="Logout">Çıkış</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>

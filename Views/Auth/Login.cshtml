@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<h2>Giriş Yap</h2>
+
+<form asp-controller="Auth" asp-action="Login" method="post">
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="password" name="password" placeholder="Şifre" required />
+    <button type="submit">Giriş</button>
+</form>
+
+<p>@TempData["Success"]</p>
+<a asp-controller="Auth" asp-action="Register">Kayıt Ol</a>

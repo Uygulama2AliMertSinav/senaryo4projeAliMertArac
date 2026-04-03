@@ -1,0 +1,12 @@
+﻿@model AliMertTosunAracSinavi.Models.User
+
+<h2>Kayıt Ol</h2>
+
+<form asp-controller="Auth" asp-action="Register" method="post">
+    <input asp-for="FullName" placeholder="Ad Soyad" required />
+    <input asp-for="Email" placeholder="Email" required />
+    <input asp-for="Password" placeholder="Şifre" type="password" required />
+    <button type="submit">Kayıt Ol</button>
+</form>
+
+<a asp-controller="Auth" asp-action="Login">Giriş Yap</a>
